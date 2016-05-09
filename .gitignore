@@ -4,3 +4,4 @@
 *.DS_Store
 
 /static/bundle.js
+/static/*.otf
