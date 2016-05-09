@@ -1,3 +1,7 @@
 import App from './app'
 
-const app = new App();
+window.onload = () => {
+
+    const app = new App();
+    
+};
