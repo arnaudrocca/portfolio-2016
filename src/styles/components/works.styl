@@ -1,0 +1,184 @@
+.works
+    position relative
+    width 100%
+    background $black
+    color $white
+    z-index 3
+
+    &_container
+        width 80%
+        margin 0 auto
+        padding-top 1rem
+        padding-bottom 12rem
+
+        .work
+            width 100%
+            height 24vw
+            margin-top 12rem
+            &_first-child
+                margin-top 6rem
+            opacity .6
+
+            transition opacity .2s $ease-out
+
+            &_infos
+                width 40%
+
+                h2
+                    display inline-block
+                    font-weight 200
+                    font-size 2rem
+                    padding-bottom .5rem
+                    margin-bottom 1rem
+                    border-bottom solid 2px $blue
+
+                h3
+                    margin-top 2.5rem
+                    font-weight normal
+                    font-size 2rem
+                    line-height 3rem
+                    font-variant small-caps
+
+                    &::before
+                        content '- '
+                        color $blue
+
+                p
+                    font-weight 200
+                    font-size 1.4rem
+                    line-height 2rem
+
+                &_description
+                    margin-top 1rem
+
+                &_technologies
+                    display inline-block
+                    text-align left
+                    min-width 25%
+
+                    @media mediaQueryTablet
+                        min-width 20%
+
+            &_wrapper
+                display block
+
+                &_image
+                    width 60%
+                    height 100%
+                    background-color $black
+                    background-position center
+                    background-repeat no-repeat
+                    background-size 100%
+
+                    transition all .4s $ease-out
+
+                    span
+                        margin-top calc(24vw - 3.5rem)
+                        padding 1.5rem
+                        padding-bottom 0
+                        font-weight 200
+                        font-size 1.5rem
+                        background $black
+
+                        &::after
+                            content ''
+                            position relative
+                            display block
+                            width 0%
+                            height 2px
+                            margin-left 50%
+                            margin-top .5rem
+                            background $blue
+
+                            transition all .2s $ease-out
+
+            &:nth-child(odd)
+                .work_infos
+                    float right
+
+                    h2, h3, p
+                        margin-left 3rem
+
+                .work_wrapper_image
+                    float left
+
+                    span
+                        float left
+
+            &:nth-child(even)
+                .work_infos
+                    float left
+
+                    h2, h3, p
+                        margin-right 3rem
+
+                .work_wrapper_image
+                    float right
+
+                    span
+                        float right
+
+            &.active
+                opacity 1
+
+                .work_wrapper_image
+                    &:hover
+                        &.target
+                            background-size 110%
+
+                            span
+                                &::after
+                                    width 100%
+                                    margin-left 0%
+
+        &_experiments
+            .work_infos_technologies
+                display block
+                text-align left
+
+    h1
+        width 60%
+        margin 6rem 0
+        padding 1rem 0
+        text-align left
+        font-weight 200
+        font-size 3rem
+        text-transform lowercase
+        font-variant small-caps
+        border-bottom solid 2px $blue
+
+@media mediaQueryMobile
+    .works
+        &_container
+            width 100%
+            padding-bottom 180rem
+
+            .work
+                opacity 1
+
+                &_infos
+                    width 100%
+                    float bottom
+
+                    h2, h3, p
+                        margin-left 3rem
+                        margin-right 3rem
+
+                    &_technologies
+                        display block
+                        text-align left
+
+                &_wrapper_image
+                    width 100%
+                    margin 3rem 0
+                    margin-bottom 12rem
+                    padding-top 20rem
+                    float bottom
+
+                    span
+                        float right !important
+
+        h1
+            min-width calc(60% - 6rem)
+            margin 6rem auto
+            text-align center
