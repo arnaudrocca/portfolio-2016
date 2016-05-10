@@ -14,9 +14,9 @@
         .work
             width 100%
             height 24vw
-            margin-top 12rem
+            margin-top 16rem
             &_first-child
-                margin-top 6rem
+                margin-top 8rem
             opacity .6
 
             transition opacity .2s $ease-out
@@ -37,6 +37,7 @@
                     font-weight normal
                     font-size 2rem
                     line-height 3rem
+                    text-transform lowercase
                     font-variant small-caps
 
                     &::before
@@ -146,6 +147,12 @@
         text-transform lowercase
         font-variant small-caps
         border-bottom solid 2px $blue
+
+@media mediaQueryLaptop
+    .work
+        margin-top 12rem
+        &_first-child
+            margin-top 6rem
 
 @media mediaQueryMobile
     .works
