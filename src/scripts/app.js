@@ -54,10 +54,12 @@ class App {
         switch (event.target.className) {
             case 'about_title':
                 document.body.querySelector('.about').classList.add('active');
+                window.addEventListener('keydown', this.onKeyDown.bind(this));
                 break;
 
             case 'about_cross':
                 document.body.querySelector('.about').classList.remove('active');
+                window.removeEventListener('keydown', this.onKeyDown);
                 break;
 
             case 'home_works_title':
@@ -110,6 +112,20 @@ class App {
         }
 
         this.scene.resize(this.width, this.height);
+
+    }
+
+    /**
+     * @method
+     * @name onKeyDown
+     * @description Triggered a key is pressed
+     * @param {object} key
+     */
+    onKeyDown(key) {
+
+        if (key.keyCode == 27) {
+            document.body.querySelector('.about').classList.remove('active');
+        }
 
     }
 
