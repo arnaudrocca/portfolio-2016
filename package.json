@@ -2,10 +2,10 @@
   "name": "Arnaud-Rocca-Portfolio-2016",
   "version": "1.0.0",
   "description": "Arnaud Rocca - Creative Developer",
-  "main": "static/bundle.js",
+  "main": "src/scripts/main.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --hot --inline",
-    "build": "webpack --progress --colors"
+    "start": "webpack-dev-server --progress --colors --hot --inline --config webpack.config.js",
+    "build": "webpack --progress --colors --config webpack.prod.config.js"
   },
   "author": {
     "name": "Arnaud Rocca",
@@ -28,8 +28,12 @@
     "babel-loader": "^6.2.4",
     "babel-plugin-add-module-exports": "^0.1.4",
     "babel-preset-es2015": "^6.6.0",
+    "clean-webpack-plugin": "^0.1.9",
+    "copy-webpack-plugin": "^2.1.3",
     "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.16.1",
     "json-loader": "^0.5.4",
     "postcss-loader": "^0.8.2",
     "precss": "^1.4.0",

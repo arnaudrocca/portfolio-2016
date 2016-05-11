@@ -1,7 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var precss = require('precss');
 var autoprefixer = require('autoprefixer');
 
@@ -12,7 +14,7 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'bundle.js',
+        filename: '[name]-[hash].min.js',
         publicPath: '/'
     },
     node: {
@@ -41,6 +43,15 @@ module.exports = {
             { from: 'static' }
         ],
         { ignore: ['.DS_Store', '.keep'] }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+                drop_console: true
+                // pure_funcs: ['console.log']
+            }
+        }),
+        new ExtractTextPlugin('[name]-[hash].min.css', { allChunks: true }),
+        new CleanWebpackPlugin(['build'], { root: __dirname }),
     ],
     module: {
         loaders: [
@@ -56,7 +67,7 @@ module.exports = {
             {
                 test: /\.styl$/,
                 exclude: /node_modules/,
-                loader: 'style!css!postcss!stylus'
+                loader: ExtractTextPlugin.extract('style', 'css!postcss!stylus')
             },
             {
                 test: /\.(otf|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
