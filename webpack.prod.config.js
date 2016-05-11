@@ -39,10 +39,14 @@ module.exports = {
             inject: 'body',
             filename: 'index.html'
         }),
-        new CopyWebpackPlugin([
-            { from: 'static' }
-        ],
-        { ignore: ['.DS_Store', '.keep'] }),
+        new CopyWebpackPlugin(
+            [{
+                from: 'static'
+            }],
+            {
+                ignore: ['.DS_Store', '.keep']
+            }
+        ),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,

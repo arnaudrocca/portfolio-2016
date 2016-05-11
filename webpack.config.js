@@ -1,5 +1,4 @@
 var path = require('path');
-var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var precss = require('precss');
@@ -37,10 +36,14 @@ module.exports = {
             inject: 'body',
             filename: 'index.html'
         }),
-        new CopyWebpackPlugin([
-            { from: 'static' }
-        ],
-        { ignore: ['.DS_Store', '.keep'] }),
+        new CopyWebpackPlugin(
+            [{
+                from: 'static'
+            }],
+            {
+                ignore: ['.DS_Store', '.keep']
+            }
+        ),
     ],
     module: {
         loaders: [
