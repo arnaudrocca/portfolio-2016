@@ -113,6 +113,12 @@ class App {
 
         this.scene.resize(this.width, this.height);
 
+        if (this.width < 612) {
+            for (let work of this.works) {
+                work.classList.add('active');
+            }
+        }
+
     }
 
     /**
