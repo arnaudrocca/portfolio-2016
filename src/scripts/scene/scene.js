@@ -7,10 +7,10 @@ class Scene {
 	 */
 	constructor() {
 
-		this.width = window.innerWidth;
-		this.height = window.innerHeight;
+		const width = window.innerWidth;
+		const height = window.innerHeight;
 
-		this.renderer = new CanvasRenderer(this.width, this.height, {
+		this.renderer = new CanvasRenderer(width, height, {
 			antialias: true,
 			transparent: true
 		});
