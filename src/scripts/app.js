@@ -17,7 +17,7 @@ class App {
         this.LAST_TIME = Date.now();
         this.timer = 0;
 
-        this.scene = new Scene();
+        this.scene = new Scene(this.width, this.height);
         this.curves = new Array();
 
         for (let i = 0; i < 20; i++) {
