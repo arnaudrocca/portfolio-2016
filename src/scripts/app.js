@@ -25,16 +25,17 @@ class App {
             this.scene.add(this.curves[i]);
         }
 
-        const home = document.body.querySelector('.home_experiment');
-        home.appendChild(this.scene.renderer.view);
+        const homeExperimentNode = document.body.querySelector('.home_experiment');
+        homeExperimentNode.appendChild(this.scene.renderer.view);
 
-        this.homeWorks = document.body.querySelector('.home_works');
+        this.homeWorksNode = document.body.querySelector('.home_works');
+        this.aboutNode = document.body.querySelector('.about');
 
-        const workClass = document.getElementsByClassName('work');
+        const workNode = document.getElementsByClassName('work');
         this.works = new Array();
 
-        for (let i = 0; i < workClass.length; i++) {
-            this.works.push(workClass[i]);
+        for (let i = 0; i < workNode.length; i++) {
+            this.works.push(workNode[i]);
         }
 
         this.addListeners();
@@ -89,10 +90,10 @@ class App {
             }
         }
 
-        if (this.homeWorks.getBoundingClientRect().bottom <= this.height / 1.2) {
-            this.homeWorks.classList.add('hide');
+        if (this.homeWorksNode.getBoundingClientRect().bottom <= this.height / 1.2) {
+            this.homeWorksNode.classList.add('hide');
         } else {
-            this.homeWorks.classList.remove('hide');
+            this.homeWorksNode.classList.remove('hide');
         }
 
     }
@@ -125,12 +126,15 @@ class App {
      * @method
      * @name onKeyDown
      * @description Triggered a key is pressed
-     * @param {object} key
+     * @param {object} e - event
      */
-    onKeyDown(key) {
+    onKeyDown(e) {
 
-        if (key.keyCode == 27) {
-            document.body.querySelector('.about').classList.remove('active');
+        const event = e || window.e;
+        const key = event.keyCode || event.which;
+
+        if (key == 27) {
+            this.aboutNode.classList.remove('active');
         }
 
     }

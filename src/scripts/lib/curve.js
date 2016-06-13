@@ -25,7 +25,7 @@ class Curve extends Graphics {
         this.centerX = this.windowWidth / 2;
         this.centerY = this.windowHeight / 2;
 
-        this.points = {
+        this.nodes = {
             start: {
                 x: -this.windowWidth / 10,
                 y: this.centerY
@@ -77,19 +77,19 @@ class Curve extends Graphics {
         this.strengthY = Math.min(this.windowWidth, this.windowHeight) / 2;
 
         // CONTROL 1
-        this.points.control1.x = this.centerX + Math.sin(timer) * this.strengthX;
-        this.points.control1.y = this.centerY + Math.cos(timer) * this.strengthY;
+        this.nodes.control1.x = this.centerX + Math.sin(timer) * this.strengthX;
+        this.nodes.control1.y = this.centerY + Math.cos(timer) * this.strengthY;
         // CONTROL 2
-        this.points.control2.x = this.centerX + Math.sin(timer) * this.strengthX;
-        this.points.control2.y = this.centerY - Math.cos(timer) * this.strengthY;
+        this.nodes.control2.x = this.centerX + Math.sin(timer) * this.strengthX;
+        this.nodes.control2.y = this.centerY - Math.cos(timer) * this.strengthY;
 
         // CURVE
         this.lineStyle(3, 0x3333FF, (id / 10));
-        this.moveTo(this.points.start.x, this.points.start.y); // START
+        this.moveTo(this.nodes.start.x, this.nodes.start.y);
         this.bezierCurveTo(
-            this.points.control1.x, this.points.control1.y, // CONTROL 1
-            this.points.control2.x, this.points.control2.y, // CONTROL 2
-            this.points.end.x, this.points.end.y); // END
+            this.nodes.control1.x, this.nodes.control1.y,
+            this.nodes.control2.x, this.nodes.control2.y,
+            this.nodes.end.x, this.nodes.end.y);
 
     }
 
