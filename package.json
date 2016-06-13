@@ -1,7 +1,7 @@
 {
   "name": "Arnaud-Rocca-Portfolio-2016",
   "version": "1.0.0",
-  "description": "Arnaud Rocca - Creative Developer",
+  "description": "Arnaud Rocca creative developer and student at Gobelins Paris.",
   "main": "src/scripts/main.js",
   "scripts": {
     "start": "webpack-dev-server --progress --colors --hot --inline --config webpack.config.js",
