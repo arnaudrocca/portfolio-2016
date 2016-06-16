@@ -1,6 +1,6 @@
 # Arnaud Rocca - Portfolio 2016
 
-![Preview](http://arnaudrocca.fr/share/share.png)
+![Preview](http://arnaudrocca.fr/assets/images/share/share.png)
 
 #### Technologies :
 
