@@ -1,7 +1,7 @@
-import App from './app'
+import App from './App'
 
 window.onload = () => {
 
-    const app = new App();
+    new App();
 
 }

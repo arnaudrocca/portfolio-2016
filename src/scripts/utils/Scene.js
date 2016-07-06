@@ -7,9 +7,14 @@ class Scene {
 	 */
 	constructor(width, height) {
 
+		const pixelRatio = window.devicePixelRatio;
+
+		TweenMax.set('.app', {scale: 1 / pixelRatio, transformOrigin: '0% 0%'});
+
 		this.renderer = new CanvasRenderer(width, height, {
 			antialias: true,
-			transparent: true
+			transparent: true,
+			resolution: pixelRatio
 		});
 
 		this.stage = new Container();

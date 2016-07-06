@@ -1,7 +1,7 @@
 import 'TweenMax'
 import 'scrollTo'
-import Scene from './scene/scene'
-import Curve from './lib/curve'
+import Scene from './utils/Scene'
+import Curve from './lib/Curve'
 
 class App {
 
