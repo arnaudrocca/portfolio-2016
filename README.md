@@ -1,7 +1,5 @@
 # Arnaud Rocca - Portfolio 2016
 
-![Preview](http://arnaudrocca.fr/assets/images/share/share.png)
-
 #### Technologies :
 
 * [ES6 - Babel](https://github.com/babel/babel)
